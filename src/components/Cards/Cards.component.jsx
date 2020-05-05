@@ -5,9 +5,9 @@ import CountUp from 'react-countup';
 
 import './Cards.styles.css';
 
-const Cards = ( { data: { confirmed, recovered, deaths, lastUpdate } } ) => {
+const Cards = ( { data } ) => {
 
-	if(!confirmed) {
+	if(data && !data.confirmed) {
 		return 'Loading...'
 	}
 	
@@ -20,12 +20,12 @@ const Cards = ( { data: { confirmed, recovered, deaths, lastUpdate } } ) => {
 						<Typography variant='h5'> 
 							<CountUp 
 								start={0}
-								end={confirmed.value}
+								end={data.confirmed.value}
 								duration={1.5}
 								separator=','
 							/>
 						</Typography>
-						<Typography color='textSecondary'> { new Date(lastUpdate).toDateString() } </Typography>
+						<Typography color='textSecondary'> { new Date(data.lastUpdate).toDateString() } </Typography>
 						<Typography variant='body2'> Number of active cases of COVID-19 </Typography>
 					</CardContent>
 				</Grid>
@@ -36,12 +36,12 @@ const Cards = ( { data: { confirmed, recovered, deaths, lastUpdate } } ) => {
 						<Typography variant='h5'> 
 							<CountUp 
 								start={0}
-								end={recovered.value}
+								end={data.recovered.value}
 								duration={1.0}
 								separator=','
 							/>
 						</Typography>
-						<Typography color='textSecondary'> { new Date(lastUpdate).toDateString() } </Typography>
+						<Typography color='textSecondary'> { new Date(data.lastUpdate).toDateString() } </Typography>
 						<Typography variant='body2'> Number of active recoveries from COVID-19 </Typography>
 					</CardContent>
 				</Grid>
@@ -52,12 +52,12 @@ const Cards = ( { data: { confirmed, recovered, deaths, lastUpdate } } ) => {
 						<Typography variant='h5'> 
 							<CountUp 
 								start={0}
-								end={deaths.value}
+								end={data.deaths.value}
 								duration={1.5}
 								separator=','
 							/>
 						</Typography>
-						<Typography color='textSecondary'> { new Date(lastUpdate).toDateString() } </Typography>
+						<Typography color='textSecondary'> { new Date(data.lastUpdate).toDateString() } </Typography>
 						<Typography variant='body2'> Number of deaths caused by COVID-19 </Typography>
 					</CardContent>
 				</Grid>

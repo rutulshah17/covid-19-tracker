@@ -19,8 +19,7 @@ class Chart extends React.Component {
 
 	render() {    
 		const { dailyData } = this.state;
-
-		console.log(dailyData)
+		const { data, country } = this.props;
 
 		const lineChart = (
 			dailyData.length 
@@ -44,10 +43,33 @@ class Chart extends React.Component {
 			: null
 		);
 
+		const barChart = (
+			(data.confirmed !== undefined)
+			? (
+				<Bar 
+					data={{
+						labels: ['Infected', 'Recovered', 'Deaths'],
+						datasets: [{
+							labels: 'People',
+							backgroundColor: [ 'rgba(0, 0, 255, 0.5)', 'rgba(0, 255, 0, 0.5)', 'rgba(255, 0, 0, 0.5)' ],
+							data: [data.confirmed.value, data.recovered.value, data.deaths.value]
+						}]
+					}}
+					options={{
+						legend: { display: false },
+						title: { display: true, text: `Current state in ${country}`}
+					}}
+				/>
+			)
+			: null
+		)
 
 		return (
 			<div className='chart-container'>
-				{ lineChart }
+				{ country 
+					? barChart
+					: lineChart 
+				}
 			</div>
 		)
 	}
