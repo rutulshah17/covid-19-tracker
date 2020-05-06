@@ -1,12 +1,12 @@
 import React from 'react';
 
+import './App.css'
+
 import Cards from './components/cards/cards.component';
 import Chart from './components/chart/chart.component'; 
 import CountryPicker from './components/country-picker/countrypicker.component'; 
 
 import CoronaImage from './images/image.png';
-
-import './App.css'
 
 import { fetchApiData } from  './api/api';
 
