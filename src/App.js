@@ -6,7 +6,7 @@ import CountryPicker from './components/country-picker/countrypicker.component';
 
 import CoronaImage from './images/image.png';
 
-import './app.css'
+import './App.css'
 
 import { fetchApiData } from  './api/api';
 
