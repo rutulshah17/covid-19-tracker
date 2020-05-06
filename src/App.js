@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './App.css'
+import './App.css';
 
 import Cards from './components/cards/cards.component';
 import Chart from './components/chart/chart.component'; 
