@@ -1,8 +1,8 @@
 import React from 'react';
 
-import Cards from './components/Cards/Cards.component';
-import Chart from './components/Chart/Chart.component'; 
-import CountryPicker from './components/CountryPicker/CountryPicker.component'; 
+import Cards from './components/cards/cards.component';
+import Chart from './components/chart/chart.component'; 
+import CountryPicker from './components/country-picker/countrypicker.component'; 
 
 import CoronaImage from './images/image.png';
 

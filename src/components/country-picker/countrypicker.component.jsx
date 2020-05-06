@@ -4,7 +4,7 @@ import { NativeSelect, FormControl } from '@material-ui/core';
 
 import { fetchCountryData } from '../../api/api';
 
-import './CountryPicker.styles.css';
+import './countrypicker.styles.css';
 
 class CountryPicker extends React.Component {
     state = {

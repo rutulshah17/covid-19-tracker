@@ -4,7 +4,7 @@ import { fetchApiDailyData } from '../../api/api';
 
 import { Line, Bar } from 'react-chartjs-2';
 
-import './Chart.styles.css';
+import './chart.styles.css';
 
 class Chart extends React.Component {
 
